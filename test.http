@@ -1,0 +1,20 @@
+
+POST http:localhost:5001/signup
+Content-Type: "application/json"
+
+{
+"username": "sameerAliKhan",
+"firstname": "sameer ali",
+"lastname": "Khan",
+"userpassword": "2kct123"
+}
+###
+
+POST http:localhost:5001/login
+Content-Type: "application/json"
+
+{
+    "username":"MAhmad",
+    "userpassword":"khan"
+}
+###

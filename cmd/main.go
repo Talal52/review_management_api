@@ -21,5 +21,5 @@ func init() {
 
 func main() {
 	r := gin.New()
-	log.Fatal(http.ListenAndServe(":5001", server.NewServerImpl(r)))
+	log.Fatal(http.ListenAndServe(":5002", server.NewServerImpl(r)))
 }

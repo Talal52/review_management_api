@@ -71,3 +71,7 @@ func Deleted(c *gin.Context) {
 	}
 	c.AbortWithStatusJSON(http.StatusOK, res)
 }
+
+func InternalServerError(c *gin.Context, message string) {
+	c.JSON(http.StatusInternalServerError, gin.H{"error": message})
+}

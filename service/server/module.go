@@ -25,7 +25,7 @@ func NewServer() *Server {
 func NewServerImpl(r *gin.Engine) *gin.Engine {
 	server := NewServer()
 	r.POST("/postreview", server.NewReviewAPI)
-	// r.GET("/getreview/:id",server.GetReviewByid)
+	r.GET("/getreview/:id", server.GetReviewByid)
 	r.GET("/getreview", server.GetReviewAPI)
 	r.DELETE("/delete/:id", server.DeleteReviewAPI)
 	return r

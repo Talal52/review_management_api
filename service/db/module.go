@@ -6,16 +6,14 @@ import (
 	"template/service/models"
 
 	"github.com/gin-gonic/gin"
-	_ "github.com/lib/pq"
-
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
+	_ "github.com/lib/pq"
 )
 
 type TemplateDB interface {
 	Db_new_api(c *gin.Context, new_user *models.User) (*models.User, error)
 	Db_get_api(c *gin.Context) ([]*models.User, error)
-	// Db_getreview_api(c *gin.Context, userId int) (*models.User, error)
+	Db_getreview_api(c *gin.Context, userId int) ([]*models.User, error)
 	Db_delete_api(c *gin.Context, userId int) (*models.User, error)
 }
 

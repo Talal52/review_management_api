@@ -1,4 +1,4 @@
-//api/module.go
+// template/service/api/module.go
 package api
 
 import (
@@ -8,19 +8,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Import the TemplateDB interface from the db package
+type TemplateDB = db.TemplateDB
+
 type TemplateAPI interface {
-	// HelloAPI() string
 	PostAPI(c *gin.Context, user models.User) (*models.User, error)
 	GetReviewAPI(c *gin.Context) ([]*models.User, error)
 	DeleteReviewAPI(c *gin.Context, userId int) (*models.User, error)
-	// GetReviewByid(c *gin.Context, userId int) (*models.User, error)
-	// LoginUser(c *gin.Context, user *models.LoginUser) (*models.LoginUser, string, error)
-	// Updateuser(c *gin.Context, user *models.UpdateUsr) (*models.UpdateUsr, error)
-	// DelUser(c *gin.Context) error
+	GetReviewByid(c *gin.Context, reviewID int) (*models.User, error)
+	// Other methods...
 }
 
 type TemplateAPIImpl struct {
-	db db.TemplateDB
+	db TemplateDB
 }
 
 func NewTemplateAPIImpl() *TemplateAPIImpl {
